@@ -1,0 +1,35 @@
+
+version: '3.8'
+services:
+  movies:
+    image: shiva256/paytmmovies:latest
+    ports:
+      - "90:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - "movies"
+  train:
+    image: shiva256/paytmtrain:latest
+    ports:
+      - "91:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - "train"
+  dth:
+    image: shiva256/paytmdth:latest
+    ports:
+      - "91:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - "dth"
+  recharge:
+    image: shiva256/paytmrecharge:latest
+    ports:
+      - "91:80"
+    deploy:
+      replicas: 3
+    volumes:
+      - "recharge"
